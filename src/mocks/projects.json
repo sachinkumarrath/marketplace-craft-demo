@@ -1,0 +1,16 @@
+[
+  {
+    "projectId": 1,
+    "projectName": "Project 1",
+    "projectDescription": "This projected intended for creating a demo application which will be helpful in tax sector",
+    "status": "OPEN",
+    "projectExpiration": ""
+  },
+  {
+    "projectId": 2,
+    "projectName": "Project 2",
+    "projectDescription": "This projected intended for creating a demo application which will be helpful in health sector",
+    "status": "OPEN",
+    "projectExpiration": ""
+  }
+]

@@ -1,0 +1,22 @@
+.project-input {
+  max-width: 800px;
+}
+
+.project-input-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project-list-item {
+  padding: 20px;
+  width: 60%;
+}
+
+.project-list-item:nth-child(2n) {
+  background-color: #fafafa;
+}
+
+.project-list-item:nth-child(2n + 1) {
+  background-color: #eee;
+}
