@@ -6,6 +6,8 @@ import webpackDevMiddleware from "webpack-dev-middleware";
 import config from "../../webpack.config";
 
 import projects from "../mocks/projects";
+import projectBids from "../mocks/project-bids";
+import bidders from "../mocks/bidders";
 
 const port = 1900;
 const app = express();
@@ -17,7 +19,7 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use("/project", bodyParser.json());
 
-app.get(["/buyer", "/seller"], (req, res) => {
+app.get(["/buyer", "/seller", "/final-project"], (req, res) => {
   res.sendFile(path.join(__dirname, "../pages/index.html"));
 });
 
@@ -33,15 +35,66 @@ app.post("/project", (req, res) => {
     projectExpiration,
     status: "OPEN"
   }];
-  res.send(updatedProjectList);
+  const sortedProjectList = updatedProjectList.sort((proj1, proj2) => proj1.projectId - proj2.projectId);
+  res.send(sortedProjectList);
 });
 
 app.get("/project", (req, res) => {
-  res.send(projects);
+  // const sortedProjectBids = projectBids.sort((bid1, bid2) => {
+  //   if(bid1.projectId !== bid2.projectId) {
+  //     return bid1.projectId - bid2.projectId;
+  //   } else {
+  //     return bid1.bidPrice - bid2.bidPrice;
+  //   }
+  // });
+  // let sortedProjectBidMap = {};
+  // sortedProjectBids.forEach(projectBid => {
+  //   if (!sortedProjectBidMap[projectBid.projectId]) {
+  //     sortedProjectBidMap[projectBid.projectId] = {
+  //       bidderId: projectBid.bidderId,
+  //       bidType: projectBid.bidType,
+  //       bidPrice: projectBid.bidPrice
+  //     }
+  //   }
+  // });
+  const sortedProjectList = projects.sort((proj1, proj2) => proj1.projectId - proj2.projectId);
+  // const modifiedProjectList = sortedProjectList.map(projectItem => Object.assign({}, projectItem, sortedProjectBidMap[projectItem.projectId]));
+  res.send(sortedProjectList);
 });
 
-app.post("/project/quote", (req, res) => {
-  res.send("Congratulation for express installation");
+app.post("/project/bid", (req, res) => {
+  const requestData = JSON.parse(JSON.stringify(req.body));
+  const {projectId, bidderId, bidType, bidPrice} = requestData.bidData;
+  const projectBids = requestData.projectBids;
+  let updatedProjectBids = [...projectBids, {
+    projectId,
+    bidderId,
+    bidType,
+    bidPrice
+  }];
+  const sortedProjectBids = updatedProjectBids.sort((bid1, bid2) => {
+    if(bid1.projectId !== bid2.projectId) {
+      return bid1.projectId - bid2.projectId;
+    } else {
+      return bid1.bidPrice - bid2.bidPrice;
+    }
+  });
+  res.send(sortedProjectBids);
+});
+
+app.get("/project/bids", (req, res) => {
+  const sortedProjectBids = projectBids.sort((bid1, bid2) => {
+    if(bid1.projectId !== bid2.projectId) {
+      return bid1.projectId - bid2.projectId;
+    } else {
+      return bid1.bidPrice - bid2.bidPrice;
+    }
+  });
+  res.send(sortedProjectBids);
+});
+
+app.get("/project/bidders", (req, res) => {
+  res.send(bidders);
 });
 
 app.listen(port);

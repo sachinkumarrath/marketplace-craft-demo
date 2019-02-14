@@ -1,0 +1,14 @@
+[
+  {
+    "bidderId": 1,
+    "bidderName": "Bidder 1"
+  },
+  {
+    "bidderId": 2,
+    "bidderName": "Bidder 2"
+  },
+  {
+    "bidderId": 3,
+    "bidderName": "Bidder 3"
+  }
+]

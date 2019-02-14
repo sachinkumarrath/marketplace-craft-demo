@@ -1,0 +1,86 @@
+[
+  {
+    "projectId": 1,
+    "bidderId": 1,
+    "bidType": "Fixed",
+    "bidPrice": 1000
+  },
+  {
+    "projectId": 1,
+    "bidderId": 2,
+    "bidType": "Fixed",
+    "bidPrice": 900
+  },
+  {
+    "projectId": 1,
+    "bidderId": 3,
+    "bidType": "Fixed",
+    "bidPrice": 700
+  },
+  {
+    "projectId": 2,
+    "bidderId": 1,
+    "bidType": "Fixed",
+    "bidPrice": 1100
+  },
+  {
+    "projectId": 2,
+    "bidderId": 2,
+    "bidType": "Fixed",
+    "bidPrice": 1200
+  },
+  {
+    "projectId": 2,
+    "bidderId": 3,
+    "bidType": "Fixed",
+    "bidPrice": 1300
+  },
+  {
+    "projectId": 3,
+    "bidderId": 1,
+    "bidType": "Fixed",
+    "bidPrice": 1000
+  },
+  {
+    "projectId": 3,
+    "bidderId": 3,
+    "bidType": "Fixed",
+    "bidPrice": 900
+  },
+  {
+    "projectId": 4,
+    "bidderId": 2,
+    "bidType": "Fixed",
+    "bidPrice": 1200
+  },
+  {
+    "projectId": 4,
+    "bidderId": 1,
+    "bidType": "Fixed",
+    "bidPrice": 1000
+  },
+  {
+    "projectId": 5,
+    "bidderId": 2,
+    "bidType": "Fixed",
+    "bidPrice": 1100
+  },
+  {
+    "projectId": 5,
+    "bidderId": 3,
+    "bidType": "Fixed",
+    "bidPrice": 1000
+  },
+  {
+    "projectId": 6,
+    "bidderId": 1,
+    "bidType": "Fixed",
+    "bidPrice": 1000
+  },
+  {
+    "projectId": 7,
+    "bidderId": 1,
+    "bidType": "Fixed",
+    "bidPrice": 1200
+  }
+]

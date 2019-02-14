@@ -1,3 +1,19 @@
+body {
+  margin: 0px;
+}
+
+.marketplace-header {
+  padding: 20px;
+  font-size: 36px;
+  background-color: darkturquoise;
+  color: white;
+  font-weight: 600;
+}
+
+.marketplace-content {
+  padding: 20px;
+}
+
 .project-input {
   max-width: 800px;
 }
@@ -8,9 +24,14 @@
   justify-content: space-between;
 }
 
+.project-list-ul {
+  width: 70%;
+  overflow-y: scroll;
+  max-height: 500px;
+}
+
 .project-list-item {
   padding: 20px;
-  width: 60%;
 }
 
 .project-list-item:nth-child(2n) {
@@ -19,4 +40,8 @@
 
 .project-list-item:nth-child(2n + 1) {
   background-color: #eee;
+}
+
+.post-project-section {
+  padding: 10px 0;
 }

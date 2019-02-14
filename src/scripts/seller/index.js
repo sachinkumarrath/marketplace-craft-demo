@@ -16,28 +16,24 @@ export default class SellerHome extends React.Component {
   }
 
   handleProjectNameChange(evt) {
-    console.log("onchange", evt.target.value);
     this.setState({
       projectName: evt.target.value
     });
   }
 
   handleProjectDescriptionChange(evt) {
-    console.log("onchange", evt.target.value);
     this.setState({
       projectDescription: evt.target.value
     });
   }
 
   handleProjectExpirationChange(evt) {
-    console.log("onchange", evt.target.value);
     this.setState({
       projectExpiration: evt.target.value
     });
   }
 
   postProject() {
-    console.log("Project posted", this.state);
     this.props.postProject(this.state);
     this.setState({
       projectName: "",
@@ -48,9 +44,7 @@ export default class SellerHome extends React.Component {
 
   render() {
     return <div>
-      <h1>Projects</h1>
-      <div>
-        <h2>Post a project</h2>
+        <h2>Post a new project</h2>
         <div className="project-input">
           <div className="project-input-field">
             <div>Project Name :</div>
@@ -68,8 +62,7 @@ export default class SellerHome extends React.Component {
             <input type="button" value="Post Project" onClick={this.postProject}></input>
           </div>
         </div>
-        <ProjectList projectList={this.props.projectList} />
-      </div>
-    </div>;
+        <ProjectList viewType="seller" projectList={this.props.projectList} />
+     </div>;
   }
 }
